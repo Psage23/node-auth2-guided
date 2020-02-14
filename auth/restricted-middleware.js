@@ -5,6 +5,9 @@ const Users = require('../users/users-model.js');
 module.exports = (req, res, next) => {
   const { username, password } = req.headers;
 
+  console.log(req.headers);
+  console.log(req.session.user);
+
   if (username && password) {
     Users.findBy({ username })
       .first()
